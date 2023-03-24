@@ -73,7 +73,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="" value="<?echo ((array)json_decode($_SESSION['form_data']))['password']??''?>">
+            <input class="form-control" type="password" name="password" id="">
         </div>
         <div class="mb-3">
             <label class="form-label" for="department">Department</label>
