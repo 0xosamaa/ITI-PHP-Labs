@@ -19,57 +19,57 @@
                     echo "<div class='alert alert-danger' role='alert'>\n$error\n</div>";
                 }
             }
-            if(empty($_SESSION['form_data'])){
-                $_SESSION['form_data'] = '';
+            if(empty($_SESSION['user_data'])){
+                $_SESSION['user_data'] = '';
             }
         ?>
-    <form method="POST" action="add_user.php">
+    <form method="POST" action="update_user.php">
         <label class="form-label" for="fname">First Name</label>
-        <input class="form-control" type="text" name="fname" value="<?echo ((array)json_decode($_SESSION['form_data']))['fname']??''?>">
+        <input class="form-control" type="text" name="fname" value="<?echo ((array)json_decode($_SESSION['user_data']))['fname']??''?>">
         <label class="form-label" for="lname">Last Name</label>
-        <input class="form-control" type="text" name="lname" value="<?echo ((array)json_decode($_SESSION['form_data']))['lname']??''?>">
+        <input class="form-control" type="text" name="lname" value="<?echo ((array)json_decode($_SESSION['user_data']))['lname']??''?>">
         <div class="mb-3">
             <label class="form-label">Gender</label>
             <label class="form-label">
                 Male
-                <input type="radio" name="gender" value="Male" <? if(!empty(((array)json_decode($_SESSION['form_data']))['gender'])&&((array)json_decode($_SESSION['form_data']))['gender'] === 'Male') echo 'checked'; else echo ''; ?>>
+                <input type="radio" name="gender" value="Male" <? if(!empty(((array)json_decode($_SESSION['user_data']))['gender'])&&((array)json_decode($_SESSION['user_data']))['gender'] === 'Male') echo 'checked'; else echo ''; ?>>
             </label>
             <label class="form-label">
                 Female
-                <input type="radio" name="gender" value="Female" <? if(!empty(((array)json_decode($_SESSION['form_data']))['gender'])&&((array)json_decode($_SESSION['form_data']))['gender'] === 'Female') echo 'checked'; else echo ''; ?>>
+                <input type="radio" name="gender" value="Female" <? if(!empty(((array)json_decode($_SESSION['user_data']))['gender'])&&((array)json_decode($_SESSION['user_data']))['gender'] === 'Female') echo 'checked'; else echo ''; ?>>
             </label>
         </div>
         <label class="form-label" for="address">Address</label>
         <div class="mb-3">
-          <textarea class="form-control" name="address" cols="30" rows="10"><? echo((array)json_decode($_SESSION['form_data']))['address']??'' ?></textarea>
+          <textarea class="form-control" name="address" cols="30" rows="10"><? echo((array)json_decode($_SESSION['user_data']))['address']??'' ?></textarea>
         </div>
         <div class="mb-3">
             <label class="form-label" for="country">Country</label>
             <select name="country">
-                <option value="egypt" <? if(((array)json_decode($_SESSION['form_data']))['country']??'' === 'egypt') echo 'selected'; else echo ''; ?>>Egypt</option>
-                <option value="usa" <? if(((array)json_decode($_SESSION['form_data']))['country']??'' === 'usa') echo 'selected'; else echo ''; ?>>United States Of America</option>
-                <option value="germany" <? if(((array)json_decode($_SESSION['form_data']))['country']??'' === 'germany') echo 'selected'; else echo ''; ?>>Germany</option>
+                <option value="egypt" <? if(((array)json_decode($_SESSION['user_data']))['country']??'' === 'egypt') echo 'selected'; else echo ''; ?>>Egypt</option>
+                <option value="usa" <? if(((array)json_decode($_SESSION['user_data']))['country']??'' === 'usa') echo 'selected'; else echo ''; ?>>United States Of America</option>
+                <option value="germany" <? if(((array)json_decode($_SESSION['user_data']))['country']??'' === 'germany') echo 'selected'; else echo ''; ?>>Germany</option>
             </select>
         </div>
         <label class="form-label">
             Nodejs
-            <input type="checkbox" name="skills[]" value="Nodejs" <? foreach(((array)json_decode($_SESSION['form_data']))['skills']??[] as $skill){if ($skill === 'Nodejs') echo 'checked';}?>>
+            <input type="checkbox" name="skills[]" value="Nodejs" <? foreach(((array)json_decode($_SESSION['user_data']))['skills']??[] as $skill){if ($skill === 'Nodejs') echo 'checked';}?>>
         </label>
         <label class="form-label">
             Mongodb
-            <input type="checkbox" name="skills[]" value="Mongodb" <? foreach(((array)json_decode($_SESSION['form_data']))['skills']??[] as $skill){if ($skill === 'Mongodb') echo 'checked';}?>>
+            <input type="checkbox" name="skills[]" value="Mongodb" <? foreach(((array)json_decode($_SESSION['user_data']))['skills']??[] as $skill){if ($skill === 'Mongodb') echo 'checked';}?>>
         </label>
         <label class="form-label">
             Expressjs
-            <input type="checkbox" name="skills[]" value="Expressjs" <? foreach(((array)json_decode($_SESSION['form_data']))['skills']??[] as $skill){if ($skill === 'Expressjs') echo 'checked';}?>>
+            <input type="checkbox" name="skills[]" value="Expressjs" <? foreach(((array)json_decode($_SESSION['user_data']))['skills']??[] as $skill){if ($skill === 'Expressjs') echo 'checked';}?>>
         </label>
         <label class="form-label">
             React
-            <input type="checkbox" name="skills[]" value="React" <? foreach(((array)json_decode($_SESSION['form_data']))['skills']??[] as $skill){if ($skill === 'React') echo 'checked';}?>>
+            <input type="checkbox" name="skills[]" value="React" <? foreach(((array)json_decode($_SESSION['user_data']))['skills']??[] as $skill){if ($skill === 'React') echo 'checked';}?>>
         </label>
         <div class="mb-3">
             <label class="form-label" for="username">Username</label>
-            <input class="form-control" type="text" name="username" value="<?echo ((array)json_decode($_SESSION['form_data']))['username']??''?>">
+            <input class="form-control" type="text" name="username" value="<?echo ((array)json_decode($_SESSION['user_data']))['username']??''?>">
         </div>
         <div class="mb-3">
             <label class="form-label" for="password">Password</label>
@@ -77,13 +77,14 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="department">Department</label>
-            <input class="form-control" type="text" name="department" value="<?echo ((array)json_decode($_SESSION['form_data']))['department']??''?>">
+            <input class="form-control" type="text" name="department" value="<?echo ((array)json_decode($_SESSION['user_data']))['department']??''?>">
         </div>
         <div class="mb-3">
             <label class="form-label" for="code">Code</label>
-            <input class="form-control" type="text" name="code" value="<?echo ((array)json_decode($_SESSION['form_data']))['code']??''?>">
+            <input class="form-control" type="text" name="code" value="<?echo ((array)json_decode($_SESSION['user_data']))['code']??''?>">
         </div>
         <div class="mb-3">
+            <input type="hidden" name="update_id" value="<? echo "{$_GET['update_id']}" ?>">
             <button class="btn btn-primary" type="submit">Submit</button>
             <button class="btn btn-primary" type="reset">Reset</button>
         </div>

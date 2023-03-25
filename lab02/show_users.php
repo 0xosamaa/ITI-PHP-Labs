@@ -50,7 +50,7 @@
                         }
                     }
                 }
-                    echo "<td><button class='btn btn-primary update'>Update</button></td>
+                    echo "<td><form method='GET'action='edit_user.php'><input type='hidden' name='update_id' value='$id'><button class='btn btn-primary update'>Update</button></form></td>
                     <td><form action='delete_user.php' method='POST'><input type='hidden' name='delete_id' value='$id'><button type='submit' class='btn btn-danger'>Delete</button></form></td>";
                     echo "</tr>";
                     $id++;
