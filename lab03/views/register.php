@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Lab 03</title>
+    <title>Register</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
                 <input name="profile_pic" class="form-control" type="file" src="" alt="">
             </div>
             <div class="mb-3">
-                <button class="form-control" type="submit">Register</button>
+                <button class="form-control btn btn-primary" type="submit">Register</button>
             </div>
         </form>
     </div>
