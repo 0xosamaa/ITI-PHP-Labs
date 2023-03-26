@@ -19,3 +19,4 @@ session_start();
 
 $_SESSION['errors'] = json_encode($errors);
 header("Location: ../views/login.php");
+exit();

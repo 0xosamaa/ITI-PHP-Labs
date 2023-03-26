@@ -2,6 +2,7 @@
 <?php
 if (isset($_SESSION['loggedin_user'])) {
     header("Location: ../index.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>

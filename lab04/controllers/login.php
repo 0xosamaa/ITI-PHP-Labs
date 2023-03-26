@@ -14,11 +14,13 @@ try {
         session_start();
         $_SESSION['loggedin_user'] = $result;
         header("Location: ../index.php");
+        exit();
     } else {
         $errors['invalid_login'] = "Email or password are incorrect";
         session_start();
         $_SESSION['errors'] = json_encode($errors);
         header("Location: ../views/login.php");
+        exit();
     }
     exit();
 } catch (PDOException $e) {

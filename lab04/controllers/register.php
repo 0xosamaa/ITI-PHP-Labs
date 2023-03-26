@@ -69,6 +69,7 @@ if (!empty($errors)) {
     session_start();
     $_SESSION['errors'] = json_encode($errors);
     header("Location: ../views/register.php");
+    exit();
 } else {
     $dsn = 'mysql:dbname=php_lab04;host=127.0.0.1;port=3306;';
     $user = 'root';

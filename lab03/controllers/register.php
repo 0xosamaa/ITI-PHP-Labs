@@ -69,6 +69,7 @@ if (!empty($errors)) {
     session_start();
     $_SESSION['errors'] = json_encode($errors);
     header("Location: ../views/register.php");
+    exit();
 } else {
     $auto_increment_file = fopen("../database/auto_increment.txt", "r");
     $id = fread($auto_increment_file, filesize("../database/auto_increment.txt"));
@@ -82,4 +83,5 @@ if (!empty($errors)) {
     fwrite($users_file, $user . PHP_EOL);
     fclose($users_file);
     header("Location: ../index.php");
+    exit();
 }

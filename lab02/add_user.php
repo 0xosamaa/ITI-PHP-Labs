@@ -59,9 +59,10 @@ if ($errors) {
     $_SESSION['form_data'] = json_encode($_POST);
     $_SESSION['errors'] = json_encode($errors);
     header("Location: http://localhost:8000");
-    exit;
+    exit();
 } else {
     header("Location: http://localhost:8000/show_users.php");
+    exit();
 }
 
 $database = fopen("database.txt", "a");
