@@ -1,4 +1,4 @@
-<? session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col d-flex flex-column justify-content-center align-items-center vh-100 gap-5">
-                <?
+                <?php
                 if (isset($_SESSION['loggedin_user'])) {
                     $user = explode(":", $_SESSION['loggedin_user']);
                     echo "  <div class='row'>

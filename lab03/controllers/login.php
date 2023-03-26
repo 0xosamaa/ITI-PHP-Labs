@@ -1,4 +1,4 @@
-<?
+<?php
 $errors = [];
 
 $users = file("../database/users.txt");

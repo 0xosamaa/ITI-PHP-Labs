@@ -1,8 +1,8 @@
-<? session_start(); ?>
-<?
-    if(isset($_SESSION['loggedin_user'])){
-        header("Location: ../index.php");
-    }
+<?php session_start(); ?>
+<?php
+if (isset($_SESSION['loggedin_user'])) {
+    header("Location: ../index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
                 <h1>Login</h1>
                 <div class="col-3"></div>
                 <div class="col-6">
-                    <?
+                    <?php
                     if (!empty($_SESSION['errors'])) {
                         $errors = (array)json_decode($_SESSION['errors']);
                         foreach ($errors as $error) {

@@ -1,4 +1,4 @@
-<? session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,7 @@
         <div class="my-4">
             <h1>Register</h1>
         </div>
-        <?
+        <?php
         if (!empty($_SESSION['errors'])) {
             $errors = (array)json_decode($_SESSION['errors']);
             foreach ($errors as $error) {
