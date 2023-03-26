@@ -46,7 +46,7 @@ if (!empty($_POST['password']) && !empty($_POST['confirm_password'])) {
     $errors['passwords_required'] = 'Password is required';
 }
 
-if (isset($_FILES['profile_pic']['name'])) {
+if (!empty($_FILES['profile_pic']['name'])) {
     $file_name = $_FILES['profile_pic']['name'];
     $file_tmp = $_FILES['profile_pic']['tmp_name'];
     $file_size = $_FILES['profile_pic']['size'];
@@ -61,6 +61,8 @@ if (isset($_FILES['profile_pic']['name'])) {
     if (empty($errors['file_extension']) && empty($errors['file_size'])) {
         move_uploaded_file($file_tmp, __dir__ . "/../public/images/" . $file_name);
     }
+} else {
+    $errors['file_required'] = "Image is required";
 }
 
 if (!empty($errors)) {
