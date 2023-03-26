@@ -1,4 +1,9 @@
 <? session_start(); ?>
+<?
+    if(isset($_SESSION['loggedin_user'])){
+        header("Location: ../index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
