@@ -1,4 +1,4 @@
-<? phpsession_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +27,9 @@
         ?>
         <form method="POST" action="add_user.php">
             <label class="form-label" for="fname">First Name</label>
-            <input class="form-control" type="text" name="fname" value="<? phpecho((array)json_decode($_SESSION['form_data']))['fname'] ?? '' ?>">
+            <input class="form-control" type="text" name="fname" value="<?php echo((array)json_decode($_SESSION['form_data']))['fname'] ?? '' ?>">
             <label class="form-label" for="lname">Last Name</label>
-            <input class="form-control" type="text" name="lname" value="<? phpecho((array)json_decode($_SESSION['form_data']))['lname'] ?? '' ?>">
+            <input class="form-control" type="text" name="lname" value="<?php echo((array)json_decode($_SESSION['form_data']))['lname'] ?? '' ?>">
             <div class="mb-3">
                 <label class="form-label">Gender</label>
                 <label class="form-label">
@@ -84,7 +84,7 @@
             </label>
             <div class="mb-3">
                 <label class="form-label" for="username">Username</label>
-                <input class="form-control" type="text" name="username" value="<? phpecho((array)json_decode($_SESSION['form_data']))['username'] ?? '' ?>">
+                <input class="form-control" type="text" name="username" value="<?php echo((array)json_decode($_SESSION['form_data']))['username'] ?? '' ?>">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="password">Password</label>
@@ -92,11 +92,11 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" for="department">Department</label>
-                <input class="form-control" type="text" name="department" value="<? phpecho((array)json_decode($_SESSION['form_data']))['department'] ?? '' ?>">
+                <input class="form-control" type="text" name="department" value="<?php echo((array)json_decode($_SESSION['form_data']))['department'] ?? '' ?>">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="code">Code</label>
-                <input class="form-control" type="text" name="code" value="<? phpecho((array)json_decode($_SESSION['form_data']))['code'] ?? '' ?>">
+                <input class="form-control" type="text" name="code" value="<?php echo((array)json_decode($_SESSION['form_data']))['code'] ?? '' ?>">
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Submit</button>
@@ -104,7 +104,7 @@
             </div>
         </form>
     </div>
-    <? phpsession_destroy() ?>
+    <?php session_destroy() ?>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
